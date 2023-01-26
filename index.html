@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BBB 23</title>
+        <style>
+
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: 'Poppins', sans-serif;
+            }
+            .container{
+                width: 100%;
+                height: 100vh;
+               
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+                background-color: rgb(33, 10, 88);
+            }
+
+            .container .title{
+                width: 300px;
+                height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            h2{
+                color: aliceblue;
+                font-weight: 300;
+                font-weight: 40px;
+               
+            }
+            .container .title img{
+                width: 150px;
+                
+            }
+
+            .container .main-container{
+                
+                
+                display: flex;
+                 margin-bottom: 60px;
+            }
+            .container .main-container .video{
+                width: 600px;
+                height: 340px;
+            }
+
+            .container .main-container .video iframe{
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+            .container .main-container .canais{
+                width: 300px;
+                height: 340px;
+                overflow: auto;
+                
+                
+               
+                margin: 0 auto;
+                display: grid;
+                place-items: center;
+                
+            }
+
+            .canais::-webkit-scrollbar{
+                width: 10px;
+            }
+
+            .canais::-webkit-scrollbar-thumb{
+                background-color: rgb(214, 214, 214);
+                border-radius: 10px;
+            }
+
+            .container .main-container .canais .button{
+                width: 95%;
+                height: 50px;
+                margin-bottom: 6px;
+                outline: none;
+                border: none;
+                font-size: 16px;
+                font-weight: 400;
+                font-family: 'Poppins', sans-serif;
+                border-radius: 6px;
+                background-color: rgb(31, 31, 31);
+                color: aliceblue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container .main-container .canais .button-clicked{
+                background-color: rgb(255, 241, 241);
+                color: black;
+                
+            }
+
+
+            @media only screen and (max-width: 900px){
+                .container{
+                    width: 99%;
+                    height: 130vh;
+                }
+
+                .container .main-container{
+                    width: 98%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                .container .main-container .canais{
+                    width: 70%;
+                    margin-top: 20px;
+                }
+            }
+
+            @media only screen and (max-width: 600px){
+                .container .main-container{
+                    width: 100%;
+                }
+
+                .container .main-container .video{
+                    width: 95%;
+                    height: 340px;
+                }
+                .container .main-container .canais{
+                    width: 95%;
+                    height: 340px;
+                }
+
+                .container .main-container .canais .button{
+                    height: 55px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+       <section class="container">
+            <div class="title">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Logo_Big_Brother_Brasil.png/1024px-Logo_Big_Brother_Brasil.png" alt="">
+            </div>
+            <h2>Camera 01</h2>
+            <main class="main-container">
+                <header class="video">
+                    <iframe 
+                        name=Player "" src="https://sinalpublico.com/player3/ch.php?canal=bbb23s01" allowFullScreen>
+                    </iframe>
+                </header>
+                <article class="canais">
+                    <button class="button" onclick="camera01()">Camera 01</button>      
+                    <button class="button" onclick="camera02()">Camera 02</button>      
+                    <button class="button" onclick="camera03()">Camera 03</button>      
+                    <button class="button" onclick="camera04()">Camera 04</button>      
+                    <button class="button" onclick="camera05()">Camera 05</button>      
+                    <button class="button" onclick="camera06()">Camera 06</button>      
+                    <button class="button" onclick="camera07()">Camera 07</button>      
+                    <button class="button" onclick="camera08()">Camera 08</button>        
+                </article>
+            </main>
+       </section> 
+    </body>
+    <script>
+        var buttons = document.getElementsByClassName("button");
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function() {
+                for (var j = 0; j < buttons.length; j++) {
+                    buttons[j].classList.remove("button-clicked");
+            }
+            this.classList.add("button-clicked");
+            });
+        }
+
+        function camera01(){
+            document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s01"
+            document.querySelector('h2').innerHTML = "Camera 01" 
+        }
+        function camera02(){
+            document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s02"
+            document.querySelector('h2').innerHTML = "Camera 02"
+        }
+        
+        function camera03(){
+            document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s03"
+            document.querySelector('h2').innerHTML = "Camera 03"
+        }
+        function camera04(){
+            document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s04"
+            document.querySelector('h2').innerHTML = "Camera 04"
+        }
+        function camera05(){
+            document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s05"
+            document.querySelector('h2').innerHTML = "Camera 05"
+        }
+        function camera06(){
+            document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s06"
+            document.querySelector('h2').innerHTML = "Camera 06"
+        }
+        function camera07(){
+            document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s07"
+            document.querySelector('h2').innerHTML = "Camera 07"
+        }
+        function camera08(){
+            document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s08"
+            document.querySelector('h2').innerHTML = "Camera 08"
+        }
+
+
+    </script>
+</html>
